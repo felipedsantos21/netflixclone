@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import './App.css';
 import TmdbApi from './instances/TmdbApi';
 import MovieRow from './components/MovieRow';
+
 
 const App = () => {
 
@@ -21,7 +23,7 @@ const App = () => {
     <div className="page">
       <section className="lists">
         {movieList.map((item, key) => (
-          <MovieRow />
+          <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
     </div>
